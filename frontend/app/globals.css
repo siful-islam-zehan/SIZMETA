@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #F7F6FC;
+    --bg-surface: #ffffff;
+    --border-subtle: #e9e5f5;
+    --text-primary: #151324;
+    --text-secondary: #575279;
+    --text-muted: #9893a5;
+    --brand-primary: #8055E8;
+    --brand-deep: #6036C9;
+  }
+
+  .dark {
+    --bg-main: #11101A;
+    --bg-surface: #181528;
+    --border-subtle: #292440;
+    --text-primary: #f5f3fe;
+    --text-secondary: #c4bfe0;
+    --text-muted: #79739c;
+    --brand-primary: #9d78fa;
+    --brand-deep: #8055E8;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(128, 85, 232, 0.12);
+}
+
+.dark .glass-panel {
+  background: rgba(24, 21, 40, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(128, 85, 232, 0.22);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(128, 85, 232, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .glass-card {
+  background: rgba(26, 22, 44, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(128, 85, 232, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-card:hover {
+  border-color: rgba(128, 85, 232, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(128, 85, 232, 0.2);
+}
+
+/* Ambient Glow Blobs */
+.ambient-glow-purple {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(128, 85, 232, 0.15) 0%, rgba(96, 54, 201, 0.05) 70%, transparent 100%);
+}
+
+.ambient-glow-blue {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(147, 197, 253, 0.04) 70%, transparent 100%);
+}
+
+/* TipTap Editor Styles */
+.tiptap {
+  outline: none;
+  min-height: 520px;
+}
+
+.tiptap p {
+  margin-bottom: 1.15rem;
+  line-height: 1.8;
+}
+
+.tiptap h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1.75rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+
+.tiptap h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
+  color: var(--text-primary);
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid #8055E8;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  background: rgba(128, 85, 232, 0.04);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.tiptap code {
+  background-color: rgba(128, 85, 232, 0.08);
+  color: var(--brand-primary);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.875em;
+  font-family: monospace;
+}
+
+.tiptap pre {
+  background: #11101A;
+  color: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  border: 1px solid rgba(128, 85, 232, 0.2);
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 2rem 0;
+}
